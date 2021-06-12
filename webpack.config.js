@@ -23,13 +23,13 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     {
-                        loader: MiniCssExtractPlugin.loader
+                        loader: MiniCssExtractPlugin.loader,
                     },
                     {
-                        loader: 'css-loader'
-                    }
-                ]
-            }
+                        loader: 'css-loader',
+                    },
+                ],
+            },
         ],
     },
     plugins: [
@@ -37,7 +37,10 @@ module.exports = {
             template: './src/index.html',
         }),
         new MiniCssExtractPlugin({
-            filename: 'style.bundle.css'
-        })
+            filename: 'style.bundle.css',
+        }),
     ],
+    resolve: {
+        extensions: ['.js', '.jsx'],
+    },
 }
